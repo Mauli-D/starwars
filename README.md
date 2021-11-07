@@ -4,5 +4,4 @@
 
 ### Run command 'npm install'
 
-##### Run command 'npm run start' or 'npm run build'
-
+##### Run command 'npm run start'
