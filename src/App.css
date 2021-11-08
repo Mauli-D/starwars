@@ -41,6 +41,17 @@
   font-size: 18px;
 }
 
+.text-24 {
+  font-size: 24px;
+}
+.m-auto {
+  margin: auto;
+}
+
+.m-20 {
+  margin: 20px 0;
+}
+
 .rightmargin-10 {
   margin-right: 10px;
 }
