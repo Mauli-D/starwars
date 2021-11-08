@@ -4,12 +4,13 @@ import { useParams } from "react-router";
 import { AppBar, Box, Toolbar, Typography, IconButton } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { getItem } from "../Utils/getItem";
+import { capitalizeFirstLetter } from "../Utils/getCapitalize";
 
 const Details = () => {
   const state = useSelector(state => state)
   const { bucketId, itemId } = useParams();
   const item = getItem({ bucketId, itemId, state })
-  
+
   return (
     <React.Fragment>
       <Box sx={{ flexGrow: 1 }}>
@@ -25,7 +26,7 @@ const Details = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              {bucketId.toUpperCase()}
+              {capitalizeFirstLetter(bucketId)}
             </Typography>
           </Toolbar>
         </AppBar>
