@@ -20,7 +20,6 @@ const PlanetName = () => {
       const jsonData = await res.json();
       const mapItems = jsonData.results.map(generateKey);
       dispatch(setPlanetsData(mapItems));
-      setDataisLoaded(true);
     }
     if (items.length === 0) {
       getItems();
