@@ -68,7 +68,7 @@ ul {
   width: 300px;
   position: absolute;
   left: 50%;
-  margin-top: 25px;
+  margin-top: 40px;
   margin-left: -150px;
 }
 
@@ -80,4 +80,8 @@ li {
   padding: 10px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.justify-content {
+  justify-content: center;
 }

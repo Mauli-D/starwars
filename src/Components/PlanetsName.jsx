@@ -46,7 +46,7 @@ const PlanetName = () => {
           </Toolbar>
         </AppBar>
       </Box>
-      <Grid className="center" container spacing={2}>
+      <Grid className="center" container spacing={2} mt={5}>
         {items.map((item) => (
           <Grid item xs={4} key={item.id}>
             <Button className="primary" variant="" onClick={() => _handleClick(item)}>

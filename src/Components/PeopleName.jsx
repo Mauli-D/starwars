@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { setPeopleData } from '../redux/peopleReducer'
-import { AppBar, Box, Toolbar, Typography, Button, IconButton, Avatar, Stack, Grid } from '@mui/material'
+import { AppBar, Box, Toolbar, Typography, Button, IconButton, Card, Stack, Grid, CardContent, Avatar } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useNavigate } from "react-router";
 import { generateKey } from "../Utils/generateKey";
@@ -48,13 +48,21 @@ const PeopleName = () => {
           </Toolbar>
         </AppBar>
       </Box>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} mt={5} className = "justify-content center">
         {items.map((item) => (
-          <Grid item xs={4} key={item.id}>
+          <Grid item xs={3} key={item.id} sx={{ border: '1px solid hotpink' }} mr={1} mt={2}>
             <Button variant="" onClick={() => _handleClick(item)}>
               <Stack direction="row" className="text-18">
-                <Avatar sx={{ bgcolor: 'white', color: 'hotpink', border: '2px solid hotpink'}} className="rightmargin-10">{GetInitials(item.name)}</Avatar>
-                <span className="topmargin-5">{item.name}</span>
+                <Card sx={{ width: 300, boxShadow: 'none' }}>
+                  <CardContent>
+                    <Avatar sx={{ bgcolor: 'white', color: 'hotpink', border: '2px solid hotpink' }} className="m-auto" variant="h5" component="div">
+                      {GetInitials(item.name)}
+                    </Avatar>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} mt={2}>
+                      {item.name}
+                    </Typography>
+                  </CardContent>
+                </Card >
               </Stack>
             </Button>
           </Grid>
