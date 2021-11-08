@@ -8,7 +8,6 @@ import { generateKey } from "../Utils/generateKey";
 
 const MoviesName = () => {
   const navigate = useNavigate();
-  const [dataisLoaded, setDataisLoaded] = useState(false);
   const items = useSelector((state) => state.movies.items)
   const dispatch = useDispatch()
   const _handleClick = (item) => {
@@ -21,12 +20,9 @@ const MoviesName = () => {
       const jsonData = await res.json();
       const mapItems = jsonData.results.map(generateKey);
       dispatch(setMoviesData(mapItems));
-      setDataisLoaded(true);
     }
     if (items.length === 0) {
       getItems();
-    } else {
-      setDataisLoaded(true);
     }
   }, [items, dispatch]);
 

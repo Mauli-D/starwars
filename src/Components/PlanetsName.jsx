@@ -8,7 +8,6 @@ import { generateKey } from "../Utils/generateKey";
 
 const PlanetName = () => {
   const navigate = useNavigate();
-  const [dataisLoaded, setDataisLoaded] = useState(false);
   const items = useSelector((state) => state.planets.items)
   const dispatch = useDispatch()
   const _handleClick = (item) => {
@@ -25,9 +24,7 @@ const PlanetName = () => {
     }
     if (items.length === 0) {
       getItems();
-    } else {
-      setDataisLoaded(true);
-    }
+    } 
   }, [items, dispatch]);
 
   return (

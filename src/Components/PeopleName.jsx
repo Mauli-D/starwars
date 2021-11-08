@@ -9,7 +9,6 @@ import { GetInitials } from "../Utils/getInitials";
 
 const PeopleName = () => {
   const navigate = useNavigate();
-  const [dataisLoaded, setDataisLoaded] = useState(false);
   const items = useSelector((state) => state.people.items)
   const dispatch = useDispatch()
   const _handleClick = (item) => {
@@ -23,12 +22,9 @@ const PeopleName = () => {
       const jsonData = await res.json();
       const mapItems = jsonData.results.map(generateKey);
       dispatch(setPeopleData(mapItems));
-      setDataisLoaded(true);
     }
     if (items.length === 0) {
       getItems();
-    } else {
-      setDataisLoaded(true);
     }
   }, [items, dispatch]);
 
