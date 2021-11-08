@@ -50,13 +50,13 @@ const PlanetName = () => {
           </Toolbar>
         </AppBar>
       </Box>
-      <Grid className = "center" container spacing={2}>
+      <Grid className="center" container spacing={2}>
         {items.map((item) => (
           <Grid item xs={4} key={item.id}>
             <Button className="primary" variant="" onClick={() => _handleClick(item)}>
-              <Avatar sx={{ width: 150, height: 150, bgcolor: 'white', color: 'black', border: '0.1px solid hotpink'  }}>{item.name}</Avatar>
+              <Avatar sx={{ width: 125, height: 125, bgcolor: 'white', color: 'black', border: '0.1px solid hotpink' }}>{item.name}</Avatar>
             </Button>
-            </Grid>
+          </Grid>
         ))
         }
       </Grid>

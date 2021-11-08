@@ -6,12 +6,12 @@ import MenuIcon from '@mui/icons-material/Menu'
 import { getItem } from "../Utils/getItem";
 
 const Details = () => {
-    const state = useSelector(state => state)
-    const { bucketId, itemId } = useParams();
-    const item = getItem({ bucketId, itemId, state })
-
-    return (
-        <React.Fragment>
+  const state = useSelector(state => state)
+  const { bucketId, itemId } = useParams();
+  const item = getItem({ bucketId, itemId, state })
+  
+  return (
+    <React.Fragment>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
@@ -31,12 +31,12 @@ const Details = () => {
         </AppBar>
       </Box>
       <>
-      <Box>
-       {JSON.stringify(item)}
-      </Box>
+        <Box>
+          {JSON.stringify(item)}
+        </Box>
       </>
-      </React.Fragment>
-    )
+    </React.Fragment>
+  )
 }
 
 export default Details

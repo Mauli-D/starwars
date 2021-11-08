@@ -57,7 +57,8 @@ const PeopleName = () => {
           <Grid item xs={4} key={item.id}>
             <Button variant="" onClick={() => _handleClick(item)}>
               <Stack direction="row" className="text-18">
-                <Avatar className="rightmargin-10">{GetInitials(item.name)}</Avatar><span>{item.name}</span>
+                <Avatar sx={{ bgcolor: 'white', color: 'hotpink', border: '2px solid hotpink'}} className="rightmargin-10">{GetInitials(item.name)}</Avatar>
+                <span className="topmargin-5">{item.name}</span>
               </Stack>
             </Button>
           </Grid>

@@ -40,25 +40,17 @@
 .text-18 {
   font-size: 18px;
 }
-.margin-10 {
-  margin: 10px;
-  padding: 10px;
-}
 
 .rightmargin-10 {
   margin-right: 10px;
 }
 
-.topmargin-10 {
-  margin-top: 10px;
+.topmargin-5 {
+  margin-top: 5px;
 }
 
 .center {
   text-align: center;
-}
-
-.underline {
-  text-decoration: underline;
 }
 
 ul {
@@ -77,27 +69,4 @@ li {
   padding: 10px;
   text-align: center;
   text-transform: uppercase;
-  animation: fadeIn 0.5s linear;
-  animation-fill-mode: both;
-}
-
-
-@for $i from 1 through $total-items {
-  li:nth-child(#{$i}) {
-    animation-delay: .25s * $i;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-    top: 100px;
-  }
-  75% {
-    opacity: 0.5;
-    top: 0px;
-  }
-  100% {
-    opacity: 1;
-  }
 }
