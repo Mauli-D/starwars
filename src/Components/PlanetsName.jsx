@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { setPlanetsData } from '../redux/plantesReducer'
 import { AppBar, Box, Toolbar, Typography, Button, IconButton, Avatar, Grid } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
 import { useNavigate } from "react-router";
 import { generateKey } from "../Utils/generateKey";
+import Menu from "./Menu"
 
 const PlanetName = () => {
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ const PlanetName = () => {
               aria-label="menu"
               sx={{ mr: 2 }}
             >
-              <MenuIcon />
+              <Menu />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Planets

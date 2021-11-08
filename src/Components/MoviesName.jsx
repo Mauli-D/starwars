@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { setMoviesData } from '../redux/moviesReducer'
 import { AppBar, Box, Toolbar, Typography, Button, IconButton } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
 import { useNavigate } from "react-router";
 import { generateKey } from "../Utils/generateKey";
+import Menu from "./Menu"
 
 const MoviesName = () => {
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ const MoviesName = () => {
               aria-label="menu"
               sx={{ mr: 2 }}
             >
-              <MenuIcon />
+              <Menu />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Movies
@@ -46,7 +46,7 @@ const MoviesName = () => {
           </Toolbar>
         </AppBar>
       </Box>
-      <ul>
+      <ul className="ul">
       {items.map((item) => (
         <li className="center text-18" key={item.id}>
           <Button className="primary" variant="" onClick={() => _handleClick(item)}>

@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { setPeopleData } from '../redux/peopleReducer'
 import { AppBar, Box, Toolbar, Typography, Button, IconButton, Card, Stack, Grid, CardContent, Avatar } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
 import { useNavigate } from "react-router";
 import { generateKey } from "../Utils/generateKey";
 import { GetInitials } from "../Utils/getInitials";
+import Menu from "./Menu"
 
 const PeopleName = () => {
   const navigate = useNavigate();
@@ -40,7 +40,7 @@ const PeopleName = () => {
               aria-label="menu"
               sx={{ mr: 2 }}
             >
-              <MenuIcon />
+              <Menu />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               People

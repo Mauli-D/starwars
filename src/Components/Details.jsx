@@ -2,9 +2,9 @@ import React from "react"
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { AppBar, Box, Toolbar, Typography, IconButton, TableContainer, Table, TableBody, TableRow, TableCell} from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
 import { getItem } from "../Utils/getItem";
 import { capitalizeFirstLetter } from "../Utils/getCapitalize";
+import Menu from "./Menu"
 
 const Details = () => {
   const state = useSelector(state => state)
@@ -23,7 +23,7 @@ const Details = () => {
               aria-label="menu"
               sx={{ mr: 2 }}
             >
-              <MenuIcon />
+              <Menu />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               {capitalizeFirstLetter(bucketId)}
