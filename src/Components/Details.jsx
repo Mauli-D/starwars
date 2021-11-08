@@ -11,6 +11,7 @@ const Details = () => {
   const { bucketId, itemId } = useParams();
   const item = getItem({ bucketId, itemId, state })
 
+  console.log(item);
   return (
     <React.Fragment>
       <Box sx={{ flexGrow: 1 }}>
@@ -33,7 +34,9 @@ const Details = () => {
       </Box>
       <>
         <Box>
-          {JSON.stringify(item)}
+          {item.map((i) => (
+            {i}
+          ))}
         </Box>
       </>
     </React.Fragment>
