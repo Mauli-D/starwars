@@ -1,7 +1,7 @@
 import React from "react"
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
-import { AppBar, Box, Toolbar, Typography, IconButton, Grid, TableContainer, Table, TableBody, TableRow, TableCell} from '@mui/material'
+import { AppBar, Box, Toolbar, Typography, IconButton, TableContainer, Table, TableBody, TableRow, TableCell} from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { getItem } from "../Utils/getItem";
 import { capitalizeFirstLetter } from "../Utils/getCapitalize";
@@ -9,7 +9,7 @@ import { capitalizeFirstLetter } from "../Utils/getCapitalize";
 const Details = () => {
   const state = useSelector(state => state)
   const { bucketId, itemId } = useParams();
-  const item = getItem({ bucketId, itemId, state })
+  const {item, title} = getItem({ bucketId, itemId, state })
 
   return (
     <React.Fragment>
@@ -32,15 +32,14 @@ const Details = () => {
         </AppBar>
       </Box>
       <>
-        <Box>
-          <Grid xs={4} className="m-auto">
-          <p className="text-24 center m-20"><strong>{capitalizeFirstLetter(bucketId)}</strong></p>
-          <TableContainer sx={{border: '1px solid rgba(224, 224, 224, 1)'}}>
+        <Box sx={{width: '40%'}} className="m-auto">
+          <p className="text-24 center m-20"><strong>{capitalizeFirstLetter(title)}</strong></p>
+          <TableContainer sx={{border: '1px solid rgba(224, 224, 224, 1)', borderBlockEnd: 'none'}}>
             <Table aria-label="simple table">
               <TableBody>
                 {item?.map((x) => {
                   const [[title, value]] = Object.entries(x);
-                  return <TableRow>
+                  return <TableRow key={title}>
                     <TableCell><strong>{capitalizeFirstLetter(title?.replace('_', ' '))}:</strong></TableCell>
                     <TableCell>{capitalizeFirstLetter(value)}</TableCell>
                   </TableRow>
@@ -48,7 +47,6 @@ const Details = () => {
               </TableBody>
             </Table>
           </TableContainer>
-          </Grid>
         </Box>
       </>
     </React.Fragment>
