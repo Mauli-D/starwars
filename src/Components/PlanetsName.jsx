@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { setPlanetsData } from '../redux/plantesReducer'
 import { AppBar, Box, Toolbar, Typography, Button, IconButton, Avatar, Grid } from '@mui/material'

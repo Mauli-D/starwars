@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { setPeopleData } from '../redux/peopleReducer'
 import { AppBar, Box, Toolbar, Typography, Button, IconButton, Avatar, Stack, Grid } from '@mui/material'
